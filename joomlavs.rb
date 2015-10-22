@@ -81,7 +81,7 @@ class Application
   def start
     execute_fingerprinting_tasks
     display_joomla_vulns
-    scan_extensions
+    scan_extensions if joomla_version
   end
 end
 
