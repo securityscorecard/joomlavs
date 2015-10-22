@@ -39,8 +39,8 @@ module JoomlaVS
     def determine_joomla_version
       print_line_break
       print_verbose('Determining Joomla version...')
-      determine_joomla_version_from_meta_tags
-      determine_joomla_version_from_readme unless @joomla_version
+      determine_joomla_version_from_readme
+      determine_joomla_version_from_meta_tags unless @joomla_version
       print_error('Couldn\'t determine version') unless joomla_version
     end
   end
