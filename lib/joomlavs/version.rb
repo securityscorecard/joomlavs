@@ -21,8 +21,10 @@ module JoomlaVS
 
       if joomla_version
         print_good("Joomla version #{@joomla_version} identified from meta data")
+        @component_scan = true
       else
         print_verbose('No version found in the meta data')
+        @component_scan = false
       end
     end
 
@@ -31,8 +33,21 @@ module JoomlaVS
       @joomla_version = fingerprint_scanner.version_from_readme
       if joomla_version
         print_good("Joomla version #{@joomla_version} identified from README.txt")
+        @component_scan = true
       else
         print_verbose('No version found in README.txt')
+        @component_scan = false
+      end
+    end
+
+    def determine_joomla_running
+      print_verbose('Searching for version in README.txt...')
+      @component_scan = fingerprint_scanner.joomla_from_meta_tag
+      @component_scan = fingerprint_scanner.joomla_from_script_tag unless @component_scan
+      if component_scan
+        print_good("Site is running Joomla. Version can't be determined")
+      else
+        print_verbose('Site is not running Joomla')
       end
     end
 
@@ -41,7 +56,8 @@ module JoomlaVS
       print_verbose('Determining Joomla version...')
       determine_joomla_version_from_readme
       determine_joomla_version_from_meta_tags unless @joomla_version
-      print_error('Couldn\'t determine version') unless joomla_version
+      determine_joomla_running unless @joomla_version
+      print_error('Couldn\'t determine version') unless joomla_version || component_scan
     end
   end
 end

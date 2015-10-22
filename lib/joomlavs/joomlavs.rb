@@ -18,6 +18,7 @@ module JoomlaVS
   attr_reader :fingerprint_scanner
   attr_reader :target
   attr_reader :joomla_version
+  attr_reader :component_scan
 
   def abort_scan
     print_line_break
