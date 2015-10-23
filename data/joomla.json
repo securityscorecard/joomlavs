@@ -1,5 +1,32 @@
 [
   {
+    "title": "unauthorized remote user to gain administrator privileges by hijacking the administrator session",
+    //"edbid": 0,
+    //"osvdbid": 0,
+    "cveid": "2015-7857",
+    "date": "2014-10-22",
+    "introduced_in": "3.2",
+    "fixed_in": "3.4.4"
+  },
+  {
+    "title": "SQL injection vulnerability and various mutations",
+    //"edbid": 0,
+    //"osvdbid": 0,
+    "cveid": "2015-7858",
+    "date": "2014-10-22",
+    "introduced_in": "3.2",
+    "fixed_in": "3.4.4"
+  },
+  {
+    "title": "SQL injection vulnerability and various mutations",
+    "edbid": 0,
+    "osvdbid": 0,
+    "cveid": "2015-7297",
+    "date": "2014-10-22",
+    "introduced_in": "3.2",
+    "fixed_in": "3.4.4"
+  },
+  {
     "title": "Joomla Akeeba Kickstart Unserialize Remote Code Execution",
     "edbid": 35033,
     "cveid": "2014-7228",
