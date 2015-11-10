@@ -31,8 +31,15 @@ class ExtensionScanner < Scanner
 
   def create_extension_from_manifest(xml, extension_path, manifest_uri)
     manifest = Nokogiri::XML(xml)
+    
+    begin
+      ext_version = Gem::Version.new(manifest.xpath("#{root_element_xpath}/version").text)
+    rescue
+      return {vulns:[]}
+    end
+
     {
-      version: Gem::Version.new(manifest.xpath("#{root_element_xpath}/version").text),
+      version: ext_version,
       name: manifest.xpath("#{root_element_xpath}/name").text,
       author: manifest.xpath("#{root_element_xpath}/author").text,
       author_url: manifest.xpath("#{root_element_xpath}/authorUrl").text,
@@ -45,8 +52,10 @@ class ExtensionScanner < Scanner
 
   def process_result(ext, extension_path, manifest_uri, res)
     extension = create_extension_from_manifest(res, extension_path, manifest_uri)
-    ext['vulns'].each do |v|
-      extension[:vulns].push(v) if ExtensionScanner.version_is_vulnerable(extension[:version], v)
+    if extension.has_key?("version")
+      ext['vulns'].each do |v|
+        extension[:vulns].push(v) if ExtensionScanner.version_is_vulnerable(extension[:version], v)
+      end
     end
     extension
   end
