@@ -131,11 +131,11 @@ class FingerprintScanner < Scanner
   def version_from_meta_tag
     resp = run_request(index_request)
     return nil unless resp.code == 200
+
     version = nil
     doc = Nokogiri::HTML(resp.body)
     doc.xpath('//meta[@name=\'generator\']/@content').each do |gen|
-      match = /(Joomla!?\s)([0-9]+(\.?[0-9]+)?(\.?[0-9]+)?)+/.match(gen)
-      version = match.captures[1] if match
+      version = extract_joomla_version_number(gen)
     end
 
     version
@@ -151,30 +151,6 @@ class FingerprintScanner < Scanner
 
     req.run
     version
-  end
-
-  def joomla_from_script_tag
-    resp = run_request(index_request)
-    return nil unless resp.code == 200
-    joomla=false
-    doc = Nokogiri::HTML(resp.body)
-    doc.xpath('//script').each do |gen|
-      match = /\/components\/com_/.match(gen)
-      return true if match
-    end
-    false
-  end
-
-  def joomla_from_meta_tag
-    resp = run_request(index_request)
-    return nil unless resp.code == 200
-    version = nil
-    doc = Nokogiri::HTML(resp.body)
-    doc.xpath('//meta[@name=\'generator\']/@content').each do |gen|
-      match = /Joomla/i.match(gen) 
-      return true if match
-    end
-    false
   end
 
   def interesting_headers
