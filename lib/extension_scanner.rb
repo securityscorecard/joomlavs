@@ -147,8 +147,12 @@ class ExtensionScanner < Scanner
     extensions.each do |e|
       queue_requests(e['name']) do |resp, extension_path, manifest_uri|
         lock.synchronize do
-          res = process_result(e, extension_path, manifest_uri, resp.body)
-          detected.push(res) if res[:vulns].length > 0
+          begin
+            res = process_result(e, extension_path, manifest_uri, resp.body)
+            detected.push(res) if res[:vulns].length > 0
+          rescue
+            #puts "Version of module " + e['name'].to_str + " couldn't be determined"
+          end
         end
       end
     end
