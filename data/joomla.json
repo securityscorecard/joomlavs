@@ -1,44 +1,7 @@
 [
   {
-    "title": "[HIGH] Browser information is not filtered properly while saving the session values into the database which leads to a Remote Code Execution vulnerability.",
-    //"edbid": 0,
-    //"osvdbid": 0,
-    "cveid": "2015-8562",
-    "date": "2014-12-13",
-    "introduced_in": "1.5.0",
-    "fixed_in": "3.4.6"
-  },
-  {
-    "title": "unauthorized remote user to gain administrator privileges by hijacking the administrator session",
-    //"edbid": 0,
-    //"osvdbid": 0,
-    "cveid": "2015-7857",
-    "date": "2014-10-22",
-    "introduced_in": "3.2",
-    "fixed_in": "3.4.4"
-  },
-  {
-    "title": "SQL injection vulnerability and various mutations",
-    //"edbid": 0,
-    //"osvdbid": 0,
-    "cveid": "2015-7858",
-    "date": "2014-10-22",
-    "introduced_in": "3.2",
-    "fixed_in": "3.4.4"
-  },
-  {
-    "title": "SQL injection vulnerability and various mutations",
-    "edbid": 0,
-    "osvdbid": 0,
-    "cveid": "2015-7297",
-    "date": "2014-10-22",
-    "introduced_in": "3.2",
-    "fixed_in": "3.4.4"
-  },
-  {
     "title": "Joomla Akeeba Kickstart Unserialize Remote Code Execution",
     "edbid": 35033,
-    "osvdbid": 112407,
     "cveid": "2014-7228",
     "date": "2014-10-21",
     "ranges": [
@@ -60,7 +23,6 @@
   {
     "title": "Joomla 3.2.1 - SQL Injection Vulnerability",
     "edbid": 31459,
-    "osvdbid": 103126,
     "date": "2014-02-05",
     "introduced_in": "3.2.1",
     "fixed_in": "3.2.2"
@@ -69,7 +31,6 @@
     "title": "Joomla Media Manager File Upload Vulnerability",
     "edbid": 27610,
     "cveid": "2013-5576",
-    "osvdbid": 95933,
     "date": "2013-08-15",
     "fixed_in": "3.1.5",
     "ranges": [
@@ -87,7 +48,6 @@
     "title": "Joomla! <= 3.0.3 (remember.php) - PHP Object Injection Vulnerability",
     "edbid": 25087,
     "cveid": "2013-3242",
-    "osvdbid": 92755,
     "fixed_in": "3.0.4",
     "date": "2013-04-26",
     "ranges": [
@@ -105,7 +65,6 @@
     "title": "Joomla! <= 3.0.2 (highlight.php) PHP Object Injection Vulnerability",
     "edbid": 24551,
     "cveid": "2013-1453",
-    "osvdbid": 89852,
     "fixed_in": "2.5.9",
     "date": "2013-02-27",
     "ranges": [
@@ -233,7 +192,6 @@
     "title": "Joomla 1.5.0 Beta (pcltar.php) Remote File Inclusion Vulnerability",
     "edbid": 3781,
     "cveid": "2007-2199",
-    "osvdbid": 36009,
     "date": "2007-04-23",
     "introduced_in": 1.5,
     "fixed_in": "1.5.1"
@@ -242,7 +200,6 @@
     "title": "Joomla <= 1.5.8 (xstandard editor) Local Directory Traversal Vulnerability",
     "edbid": 7691,
     "cveid": "2009-0113",
-    "osvdbid": 51172,
     "date": "2009-01-07",
     "fixed_in": "1.5.9"
   },
@@ -250,7 +207,6 @@
     "title": "Joomla 1.5.12 - tinybrowser Remote File Upload/Execute Vulnerability",
     "edbid": 9926,
     "cveid": "2011-4908",
-    "osvdbid": 64578,
     "date": "2009-07-22",
     "introduced_in": "1.5.12",
     "fixed_in": "1.5.13"
@@ -272,7 +228,6 @@
   {
     "title": "Joomla 2.5.0-2.5.1 Time Based SQL Injection Exploit",
     "edbid": 18618,
-    "osvdbid": 80705,
     "date": "2012-03-19",
     "introduced_in": 2.5,
     "fixed_in": "2.5.2"
@@ -295,7 +250,6 @@
     "title": "Joomla! 'redirect.php' SQL Injection Vulnerability",
     "edbid": 36913,
     "cveid": "2012-1116",
-    "osvdbid": 79837,
     "date": "2012-03-05",
     "ranges": [
       {
@@ -315,5 +269,25 @@
     "date": "2012-07-02",
     "introduced_in": 2.5,
     "fixed_in": 3
+  },
+  {
+    "title": "Joomla Content History SQLi Remote Code Execution",
+    "edbid": 38797,
+    "cveid": [
+      "2015-7297",
+      "2015-7857",
+      "2015-7858"
+    ],
+    "date": "2015-11-23",
+    "introduced_in": 3,
+    "fixed_in": "3.4.5"
+  },
+  {
+    "title": "Joomla 1.5 - 3.4.5 - Object Injection Remote Command Execution",
+    "edbid": 38977,
+    "cveid": "2015-8562",
+    "date": "2015-12-15",
+    "introduced_in": 1.5,
+    "fixed_in": "3.4.6"
   }
 ]

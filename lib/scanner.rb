@@ -88,4 +88,14 @@ class Scanner
 
     loc
   end
+
+  def extract_version_number(text)
+    match = /([0-9]+(\.?[0-9]+)?(\.?[0-9]+)?)+/.match(text)
+    return match.captures[0] if match
+  end
+
+  def extract_joomla_version_number(text)
+    match = /(Joomla!?\s)([0-9]+(\.?[0-9]+)?(\.?[0-9]+)?)+/.match(text)
+    return match.captures[0] if match
+  end
 end
